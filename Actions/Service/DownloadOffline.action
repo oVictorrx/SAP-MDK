@@ -1,0 +1,26 @@
+{
+    "Service": "/FirstApp/Services/FirstApp.service",
+    "DefiningRequests": [{
+            "Name": "Customers",
+            "Query": "Customers"
+        },
+        {
+            "Name": "Products",
+            "Query": "Products"
+        },
+        {
+            "Name": "SalesOrderHeaders",
+            "Query": "SalesOrderHeaders"
+        },
+        {
+            "Name": "SalesOrderItems",
+            "Query": "SalesOrderItems"
+        }
+    ],
+    "_Type": "Action.Type.OfflineOData.Download",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnFailure": "/FirstApp/Actions/Service/SyncFailureMessage.action",
+    "OnSuccess": "/FirstApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"
+}

@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ClosePage",
+	"ActionResult": {
+		"_Name": "CloseModalPage_Complete"
+	},
+	"OnFailure": "/FirstApp/Actions/UpdateCustomerEntityFailureMessage.action",
+	"DismissModal": "Action.Type.ClosePage.Completed",
+	"CancelPendingActions": false
+}

@@ -1,0 +1,19 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"ActionResult": {
+		"_Name": "Customers_CreateEntity"
+	},
+	"OnFailure": "/FirstApp/Actions/CreateCustomerEntityFailureMessage.action",
+	"OnSuccess": "/FirstApp/Actions/CloseModalPage_Complete.action",
+	"Target": {
+		"Service": "/FirstApp/Services/FirstApp.service",
+		"EntitySet": "Customers"
+	},
+	"Properties": {
+		"DateOfBirth": "#Control:FCCreateDOB/#Value",
+		"EmailAddress": "#Control:FCCreatedEmail/#Value",
+		"FirstName": "#Control:FCFirstName/#Value",
+		"LastName": "#Control:FCCreateLastName/#Value",
+		"PhoneNumber": "#Control:FCCreatePhone/#Value"
+	}
+}

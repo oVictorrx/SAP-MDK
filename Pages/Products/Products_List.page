@@ -1,0 +1,61 @@
+{
+    "Caption": "$(L,PRODUCT_TYPES)",
+    "ActionBar": {
+        "Items": [{
+            "OnPress": "/FirstApp/Actions/Products/NavToProducts_Create.action",
+            "Position": "right",
+            "SystemItem": "Add"
+        }]
+    },
+    "Controls": [{
+        "Sections": [{
+            "Header": {
+
+                "UseTopPadding": false
+            },
+            "ObjectCell": {
+                "AccessoryType": "disclosureIndicator",
+                "Description": "{CategoryName}",
+                "DetailImage": "/FirstApp/Services/FirstApp.service/{@odata.readLink}/$value",
+                "DetailImageIsCircular": false,
+                "Icons": [],
+                "OnPress": "/FirstApp/Actions/Products/NavToProducts_Detail.action",
+                "StatusImage": "",
+                "Title": "{Name}",
+                "Footnote": "{CurrencyCode}",
+                "PreserveIconStackSpacing": false,
+                "StatusText": "{DimensionDepth}",
+                "Subhead": "{Category}",
+                "SubstatusText": "{DimensionHeight}"
+            },
+            "EmptySection": {
+                "Caption": "No record found!"
+            },
+            "Search": {
+                "Enabled": true,
+                "Placeholder": "Item Search",
+                "BarcodeScanner": true,
+                "Delay": 500,
+                "MinimumCharacterThreshold": 3
+            },
+            "DataPaging": {
+                "ShowLoadingIndicator": true,
+                "LoadingIndicatorText": "Loading more items, please wait..."
+            },
+            "Target": {
+                "EntitySet": "Products",
+                "Service": "/FirstApp/Services/FirstApp.service",
+                "QueryOptions": ""
+            },
+            "_Type": "Section.Type.ObjectTable"
+        }],
+        "LoadingIndicator": {
+            "Enabled": true,
+            "Text": "Loading, please wait..."
+        },
+        "_Type": "Control.Type.SectionedTable",
+        "_Name": "SectionedTable"
+    }],
+    "_Type": "Page",
+    "_Name": "Products_List"
+}

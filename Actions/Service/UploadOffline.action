@@ -1,0 +1,9 @@
+{
+    "Service": "/FirstApp/Services/FirstApp.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/FirstApp/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/FirstApp/Actions/Service/SyncFailureMessage.action"
+}

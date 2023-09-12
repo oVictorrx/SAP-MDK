@@ -1,0 +1,63 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "Base",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "a5581c1a-237a-4aec-ab57-7068e46b7d42",
+		"Space": "67297b53-5d3b-48f3-813c-ece2fa4c5b9c",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
+			"Destination": [
+				{
+					"CF": "FirstApp",
+					"MDK": "FirstApp",
+					"URL": ""
+				},
+				{
+					"CF": "",
+					"MDK": "",
+					"URL": ""
+				}
+			],
+			"Name": "ns.FirstApp",
+			"Version": "1.0.0",
+			"AppRouter": "standalone",
+			"URL": "https://c8557cf4trial-dev-nsfirstapp-approuter.cfapps.us10-001.hana.ondemand.com/nsFirstApp"
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/a5581c1a-237a-4aec-ab57-7068e46b7d42/space/67297b53-5d3b-48f3-813c-ece2fa4c5b9c",
+		"AppId": "FirstApp",
+		"Destination": [
+			"com.sap.edm.sampleservice.v2",
+			"FirstApp"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=FirstApp&ClientId=203149cc-abac-40a6-9685-b2b4bf6700e9&ServerUrl=https://c8557cf4trial-dev-firstapp.cfapps.us10-001.hana.ondemand.com&SapCloudPlatformEndpoint=https://c8557cf4trial-dev-firstapp.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://c8557cf4trial-dev-firstapp.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://c8557cf4trial-dev-firstapp.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://c8557cf4trial-dev-firstapp.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token&multiUser=false"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true
+	}
+}

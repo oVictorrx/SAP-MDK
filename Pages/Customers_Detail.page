@@ -1,0 +1,192 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "{FirstName}",
+						"Footnote": "{EmailAddress}",
+						"Description": "{CustomerId}",
+						"StatusText": "{PhoneNumber}",
+						"DetailImage": "sap-icon://customer",
+						"DetailImageIsCircular": false,
+						"BodyText": "{DateOfBirth}",
+						"HeadlineText": "{LastName}",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading"
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "{HouseNumber} {Street}",
+							"_Name": "KeyValue3",
+							"KeyName": "Address",
+							"Visible": true
+						},
+						{
+							"Value": "{City}",
+							"_Name": "KeyValue2",
+							"KeyName": "City",
+							"Visible": true
+						},
+						{
+							"Value": "{PostalCode}",
+							"_Name": "KeyValue1",
+							"KeyName": "Postalcode",
+							"Visible": true
+						},
+						{
+							"Value": "{Country}",
+							"_Name": "KeyValue0",
+							"KeyName": "Country",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"SalesOrderHeaders"
+					],
+					"Target": {
+						"Service": "/FirstApp/Services/FirstApp.service",
+						"EntitySet": "{@odata.readLink}/SalesOrders",
+						"QueryOptions": "$top=5&$orderby=CreatedAt desc"
+					},
+					"_Name": "SectionObjectTable0",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Customer Orders"
+					},
+					"Footer": {
+						"_Name": "SectionFooter1",
+						"Caption": "See All",
+						"AttributeLabel": "/FirstApp/Rules/Customers_OrderCount.js",
+						"AccessoryType": "disclosureIndicator",
+						"FooterStyle": "attribute",
+						"Visible": true,
+						"OnPress": "/FirstApp/Actions/NavToCustomers_Orders.action",
+						"UseBottomPadding": false
+					},
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Customer Orders Found",
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"ObjectCell": {
+						"Title": "{SalesOrderId}",
+						"Subhead": "$(D,{CreatedAt},'','',{format:'medium'})",
+						"DisplayDescriptionInMobile": true,
+						"StatusText": "$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+						"SubstatusText": "{CurrencyCode}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"Tags": [],
+						"AvatarStack": {
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [],
+							"ImageIsCircular": true
+						},
+						"OnPress": "/FirstApp/Actions/NavToSalesOrders_Details.action",
+						"Selected": false,
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						}
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					}
+				}
+			]
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "/FirstApp/Services/FirstApp.service",
+		"EntitySet": "Customers"
+	},
+	"_Type": "Page",
+	"_Name": "Customers_Detail",
+	"Caption": "Details",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/FirstApp/Actions/NavToCustomers_Edit.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"SystemItem": "Trash",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/FirstApp/Rules/Customers_DeleteConfirmation.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	},
+	"ToolBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "ToolbarItem0",
+				"Caption": "Create Order",
+				"Enabled": true,
+				"Visible": true,
+				"Clickable": true,
+				"Style": "",
+				"OnPress": "/FirstApp/Actions/NavToSalesOrderHeaders_Create.action"
+			}
+		]
+	}
+}

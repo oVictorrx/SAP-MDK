@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Logger.Upload",
+	"ActionResult": {
+		"_Name": "LogUpload"
+	},
+	"OnFailure": "/FirstApp/Actions/LogUploadFailure.action",
+	"OnSuccess": "/FirstApp/Actions/LogUploadSuccessful.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Uploading Logs..."
+}

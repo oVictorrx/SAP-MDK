@@ -1,0 +1,5 @@
+{
+    "_Type": "Action.Type.OpenDocument",
+    "Path": "/FirstApp/Services/FirstApp.service/{@odata.readLink}/$value",
+    "MimeType": "image/jpeg"
+}

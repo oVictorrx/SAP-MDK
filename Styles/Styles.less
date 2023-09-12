@@ -1,0 +1,94 @@
+@mdkYellow1: #ffbb33;
+@mdkRed1: #ff0000;
+
+
+//// This style applies to all the ActionBars in the application
+ActionBar {
+    color: white; /* Define a cor do texto como branco */
+    background-color: #EB10D4;
+    text-align: center;
+    align-items: center;
+}
+
+//// This style applies to all the ToolBars in the application
+ToolBar {
+    color: white;
+    background-color: #EB10D4; /* Android */
+    bartintcolor: #EB10D4;     /* iOS */
+}
+
+body {
+    background-color: #EB95DF; /* Azul usando o nome da cor */
+}
+
+#SectionButton0 {
+    background-color: black;
+}
+//// LogoutToolbarItem is tool bar item for Logout in Main.page
+#LogoutToolbarItem  {
+    color: #EB95DF;
+}
+
+//// UploadToolbarItem is tool bar item for Sync in Main.page
+#UploadToolbarItem  {
+    color: white;
+}
+
+//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
+//// below snippet is to style Customers button on Main.page
+.MyCustomerButton{
+  color: black;
+  background-color: #EB95DF;
+}
+
+//// below snippet is to style Title property of an Object Table control in Customers_List.page
+.ObjectTableTitle {
+ color: white;
+}
+
+
+//// below snippet is to style Object Header control in Customers_Detail.page
+
+/* Object Header - BodyText */
+.objectHeaderBodyText {
+  color: white;
+}
+
+/* Object Header - Description */
+.objectHeaderDescription {
+  color: white;
+}
+
+/* Object Header - Footnote */
+.objectHeaderFootNote {
+  color: green;
+}
+
+/* Object Header - Headline */
+.objectHeaderHeadline {
+  color: #ff00ff;
+}
+
+/* Object Header - Background */
+.objectHeaderBackground {
+background-color: #DC143C;
+}
+
+/* Object Header - StatusText */
+.objectHeaderStatus {
+  color: red;
+  font-style: italic;
+  font-size: 18;
+}
+
+/* Object Header - Subhead */
+.objectHeaderSubhead {
+  color: yellow;
+}
+
+/* Object Header - SubstatusText */
+.objectHeaderSubStatus {
+  color: white;
+  font-style: italic;
+  font-size: 18;
+}
